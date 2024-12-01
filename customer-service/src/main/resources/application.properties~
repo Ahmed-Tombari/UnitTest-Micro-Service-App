@@ -1,0 +1,8 @@
+spring.application.name=customer-service
+server.port=8081
+spring.cloud.config.enabled=false
+
+spring.datasource.url=jdbc:h2:mem:customers-db
+spring.h2.console.enabled=true
+spring.data.rest.base-path=/api
+spring.docker.compose.enabled=false
