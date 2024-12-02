@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
             log.error(String.format("This product %s already exist", productDTO.getName()));
             throw new ProductAlreadyExistException();
         }
-        Product productToSave = productMapper.fromProductrDTO(productDTO);
+        Product productToSave = productMapper.fromProductDTO(productDTO);
         Product savedProduct = productRepository.save(productToSave);
         ProductDTO result = productMapper.fromProduct(savedProduct);
         return result;
@@ -64,7 +64,7 @@ public class ProductServiceImpl implements ProductService {
         Optional<Product> product=productRepository.findById(id);
         if(product.isEmpty()) throw new ProductNotFoundException();
         productDTO.setId(id);
-        Product productToUpdate = productMapper.fromProductrDTO(productDTO);
+        Product productToUpdate = productMapper.fromProductDTO(productDTO);
         Product updatedProduct = productRepository.save(productToUpdate);
         return productMapper.fromProduct(updatedProduct);
     }

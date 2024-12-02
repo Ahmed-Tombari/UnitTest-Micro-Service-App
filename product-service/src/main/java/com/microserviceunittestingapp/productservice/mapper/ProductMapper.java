@@ -14,7 +14,7 @@ public class ProductMapper {
     public ProductDTO fromProduct(Product product){
         return modelMapper.map(product, ProductDTO.class);
     }
-    public Product fromProductrDTO(ProductDTO productDTO){
+    public Product fromProductDTO(ProductDTO productDTO){
         return modelMapper.map(productDTO, Product.class);
     }
     public List<ProductDTO> fromListProducts(List<Product> products){
